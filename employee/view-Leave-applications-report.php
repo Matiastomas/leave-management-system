@@ -31,7 +31,7 @@ while ($row = mysqli_fetch_assoc($result_employee_leave)) {
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Admin</title>
+  <title>Employee</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
@@ -68,11 +68,11 @@ while ($row = mysqli_fetch_assoc($result_employee_leave)) {
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <div class="dropdown-header text-center">
                 
-                <p class="mb-1 mt-3 font-weight-semibold"><?php echo $_SESSION ['admin_name'];?></p>
+                <p class="mb-1 mt-3 font-weight-semibold"><?php echo $_SESSION ['name'];?></p>
 
               </div>
 
-              <?php  if($_SESSION["admin_name"]) {
+              <?php  if($_SESSION["name"]) {
 ?>
            <a href="logout.php" class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2">Logout </i></a>
 <?php
@@ -262,30 +262,25 @@ while ($row = mysqli_fetch_assoc($result_employee_leave)) {
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="index.php">
               <i class="mdi mdi-grid-large menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
           
-              
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/Leave-management-system/hr-manager/create-employee-accounts.php" aria-expanded="false" aria-controls="ui-basic">Create Employee Accounts</a>
+            <a class="nav-link" href="http://localhost/Leave-management-system/employee/Leave-Application-Form.php" aria-expanded="false" aria-controls="ui-basic">Leave Application Form</a>
         
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/Leave-management-system/hr-manager/manage-employee-accounts.php"  aria-controls="ui-basic">Manage Employee Account</a>
+            <a class="nav-link" href="http://localhost/Leave-management-system/employee/view-Leave-applications-report.php" aria-expanded="false" aria-controls="ui-basic">Vacation Leave Application Report</a>
         
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/Leave-management-system/hr-manager/view-Leave-applications-report.php" aria-expanded="false" aria-controls="ui-basic">Leave Application Report</a>
-        
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="http://localhost/Leave-management-system/hr-manager/view-compassionate-applications-report.php" aria-expanded="false" aria-controls="ui-basic">Compassionate Application Report</a>
+            <a class="nav-link" href="http://localhost/Leave-management-system/employee/view-compassionate-applications-report.php" aria-expanded="false" aria-controls="ui-basic">Compassionate Application Report</a>
          </li>
          <li class="nav-item">
-            <a class="nav-link" href="http://localhost/Leave-management-system/hr-manager/view-other-leaves-applications-report.php" aria-expanded="false" aria-controls="ui-basic">Other Leaves  Application Report</a>
+            <a class="nav-link" href="http://localhost/Leave-management-system/employee/view-other-leaves-applications-report.php" aria-expanded="false" aria-controls="ui-basic">Other Leaves  Application Report</a>
          </li>
         </ul>
       </nav>
