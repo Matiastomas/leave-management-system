@@ -2,25 +2,13 @@
 session_start();
  include("Logic-Layer/database-connection.php");
 
- $employeeName = $_SESSION ['name'];
  $conn;
+ $employeeName = $_SESSION ['name'];
  // Execute the SELECT query to fetch data
-$query = "SELECT * FROM leave_application where employee_name ='$employeeName'";
+$query = "SELECT * FROM leave_application where (employee_name ='$employeeName') and (leave_type='sick_leave' or leave_type='study_leave')"; 
+
 $result = mysqli_query($conn, $query);
 
-
-// Fetch employee leave details
-$query_employee_leave = "SELECT * FROM employee where username ='$employeeName'";
-$result_employee_leave = mysqli_query($conn, $query_employee_leave);
-
-// Fetching all employee leave data into an associative array
-$employee_leave_data = array();
-while ($row = mysqli_fetch_assoc($result_employee_leave)) {
-    $employee_leave_data[$row['username']] = array(
-        'vacation_leave' => $row['vacation_leave'],
-        'compassionate_leave' => $row['compassionate_leave']
-    );
-}
 ?>
 
 
@@ -293,7 +281,7 @@ while ($row = mysqli_fetch_assoc($result_employee_leave)) {
       <div class="main-panel">
         <div class="content-wrapper">
         <div class="row">
-      <div class="col-md-12 fw-bold fs-3">Vacation Leave Application Report</div>
+      <div class="col-md-12 fw-bold fs-3">Leaving Application Report</div>
     </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -305,8 +293,8 @@ while ($row = mysqli_fetch_assoc($result_employee_leave)) {
            <th>Employee Name</th>          
             <th>Start Date</th>
             <th>End Date</th>
-            <th>Expected Days For Leave</th>
-            <th>Remaining Days Of Leave</th>
+            <th>Days</th>
+            <th>Leave   Type</th>
             <th>Hr Manager Comments</th>
             <th>Application Status</th>
             <th>Publish at</th>
@@ -319,14 +307,7 @@ while ($row = mysqli_fetch_assoc($result_employee_leave)) {
 <td><?php echo $row['startdate']; ?></td>
 <td><?php echo $row['enddate']; ?></td>
 <td><?php echo $row['numDays']; ?></td>
-
-            <?php
-            $username = $row['employee_name'];
-            $vacation_leave = isset($employee_leave_data[$username]) ? $employee_leave_data[$username]['vacation_leave'] : 'N/A';
-               ?>
-            <td><?php echo $vacation_leave; ?></td>
-        
-
+<td><?php echo $row['leave_type']; ?></td>
 <td><?php echo $row['hr_manager_comments']; ?></td>
 <td><?php echo $row['Leavestatus']; ?></td>
 <td><?php echo $row['application_date']; ?></td>

@@ -2,15 +2,14 @@
 session_start();
  include("Logic-Layer/database-connection.php");
 
- $employeeName = $_SESSION ['name'];
  $conn;
  // Execute the SELECT query to fetch data
-$query = "SELECT * FROM leave_application where employee_name ='$employeeName'";
+$query = "SELECT * FROM leave_application";
 $result = mysqli_query($conn, $query);
 
 
 // Fetch employee leave details
-$query_employee_leave = "SELECT * FROM employee where username ='$employeeName'";
+$query_employee_leave = "SELECT * FROM employee";
 $result_employee_leave = mysqli_query($conn, $query_employee_leave);
 
 // Fetching all employee leave data into an associative array
@@ -293,7 +292,7 @@ while ($row = mysqli_fetch_assoc($result_employee_leave)) {
       <div class="main-panel">
         <div class="content-wrapper">
         <div class="row">
-      <div class="col-md-12 fw-bold fs-3">Vacation Leave Application Report</div>
+      <div class="col-md-12 fw-bold fs-3">Compassionate Leave Application Report</div>
     </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -322,10 +321,10 @@ while ($row = mysqli_fetch_assoc($result_employee_leave)) {
 
             <?php
             $username = $row['employee_name'];
-            $vacation_leave = isset($employee_leave_data[$username]) ? $employee_leave_data[$username]['vacation_leave'] : 'N/A';
-               ?>
-            <td><?php echo $vacation_leave; ?></td>
-        
+            $compassionate_leave = isset($employee_leave_data[$username]) ? $employee_leave_data[$username]['compassionate_leave'] : 'N/A';
+            ?>
+            
+            <td><?php echo $compassionate_leave; ?></td>
 
 <td><?php echo $row['hr_manager_comments']; ?></td>
 <td><?php echo $row['Leavestatus']; ?></td>

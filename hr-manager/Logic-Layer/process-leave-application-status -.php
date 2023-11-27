@@ -20,7 +20,7 @@ $comment = $_POST ['comment'];
 
       if (mysqli_query($conn, $sql)) {
         
-        header("location:Leave-management-system/hr-manager/index.php");
+        header("location:view-Leave-applications-report.php");
     
         exit();
 
