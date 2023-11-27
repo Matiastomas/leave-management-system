@@ -1,0 +1,236 @@
+body{
+    
+    margin: 0;
+
+}
+
+
+
+span{
+    color: #f51818;
+}
+header{
+    padding:20px;
+}
+
+header input{
+
+    float: right;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 10px;
+    margin-top: -30px;
+   
+}
+
+ul li{
+
+    display: inline-block;
+    padding-right: 10px;
+    color: white;
+}
+
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+img{
+
+    float:left
+}
+
+select{
+
+    background-color:brown;
+    color:#ffffff;
+    padding:10px;
+    border-radius: 5px;
+    border:1px;
+    width:30%;
+
+}
+select:hover{
+    background-color:brown;
+    color:#ffffff;
+    padding:10px;
+    border-radius: 5px;
+    border:1px;
+    width:30%;
+    
+}
+section{
+   
+   text-align: center;
+   background-image: url("../img/research1.jpg");
+   background-repeat: no-repeat;
+   background-size: 100% 500px;
+   padding: 190px;
+   
+}
+ div  .input {
+    margin-top: 10px;
+    display: inline-block;
+    background-color: black;
+    border-radius: 5px;
+    padding: 13px;
+    margin-left:3px;
+    color: white;
+}
+.text-black{
+    margin-left: 120px;
+    color: black;
+}
+h2{
+    text-align: center;
+}
+.gallery{
+    
+    width:100%;
+    text-align: center;
+    margin: 0 auto;
+  
+
+}
+
+.gallery .image-placeholder{
+
+    display:inline-block;
+    margin-left: 6px;
+    
+    }
+    
+    .image-placeholder{
+    
+    
+        height: 50px;
+        width: 50px;
+        padding: 50px;
+        margin-left: 5px;
+    }
+
+form{
+
+    text-align: center;
+}
+
+h1{
+    margin-top:-20px;
+    color:#ffffff;
+    background-color: brown;
+    padding: 5px;
+}
+footer, nav{
+    background-color: rgb(174, 33, 33);
+    padding: 20px;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.form-container{
+
+    padding: 40px;
+}
+
+.form-input-text-shape{
+    padding:13px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.input-size-1{
+
+    width: 28.5%;
+    margin-left:5px;
+}
+.input-size-2{
+
+    width: 60%;
+    margin-left:5px;
+}
+
+textarea{
+    width:60%;
+    height: 200px;
+    
+}
+.input-text-shape-login{
+    padding:13px;
+    border: 2px solid  #0cb8e8;
+    border-radius: 6px;
+   
+}
+
+input[type="submit"]{
+   
+    background-color: #0cb8e8 ;
+    padding:10px;
+    border: 0px solid black;
+    color: #ffffff;
+    border-radius: 6px;
+}
+
+.login-sign-container{
+  
+    margin-top: 20px;
+}
+.login-sign-up-button{
+
+        background-color: black;
+        padding:10px;
+        width:8%;
+        border: 1px solid black;
+        color: #ffffff;
+        border-radius: 6px;
+}
+
+.container{
+     margin-top: 40px;
+}
+.center-text{
+
+    margin-top:30px;
+    text-align:center;
+
+}
+
+.login-button-size{
+
+   width: 30%;
+}
+
+.delete-button{
+
+    background-color: #f51818;
+    border:0;
+    padding: 20px;
+}
+
+.update-button{
+    background-color: #0ab6fafa;
+    border:0;
+    padding: 20px;
+}
+
+.desc_container{
+    height: 50px;
+    border: 4px solid #0000;
+    margin-top: -20px;
+}
+
+.items-container .grid{
+  display: inline-block;
+  border: 1px solid #0000;
+  
+}
+
+tr td{
+    padding:30px;
+}
+
+.user-details-container{
+
+    text-align: center;
+}
