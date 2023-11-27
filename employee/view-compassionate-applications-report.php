@@ -308,6 +308,7 @@ while ($row = mysqli_fetch_assoc($result_employee_leave)) {
             <th>Hr Manager Comments</th>
             <th>Application Status</th>
             <th>Publish at</th>
+            <th>Certificate</th>
             <th>Action</th> 
         </tr>
         <?php while ($row = mysqli_fetch_assoc($result)) { ?>
@@ -328,6 +329,8 @@ while ($row = mysqli_fetch_assoc($result_employee_leave)) {
 <td><?php echo $row['hr_manager_comments']; ?></td>
 <td><?php echo $row['Leavestatus']; ?></td>
 <td><?php echo $row['application_date']; ?></td>
+<td><a href="http://localhost/Leave-management-system/employee/uploads/<?php echo $row['certificate_path']; ?>" target="_blank">Open certificate</a></td>
+
 
 <td>
     <a href="update-leave-application-status.php?id=<?php echo $row['leave_id']; ?>" class="btn btn-primary">Update Application Status</a><br><br>

@@ -115,9 +115,16 @@ function updateCompassionateLeave ($conn, $start_date, $end_date, $days, $leave_
         $update_query = "UPDATE employee SET compassionate_leave = '$remainingCompassionateLeaveDays' WHERE username = '$EmployeeName'";
         mysqli_query($conn, $update_query);
 
-         // Insert leave application details
-$query = "INSERT into leave_application (startdate, enddate, leave_type, employee_name, application_date, numDays) 
-VALUES('$start_date', '$end_date', '$leave_type', '$EmployeeName', '$publish_at','$days')";
+        // File upload handling
+    $targetDirectory = "uploads/"; // Directory where files will be uploaded
+    $uploadedFileName = $_FILES['certificate']['name']; // Get the name of the uploaded file
+    
+
+    // Check if file was uploaded without errors
+    if (move_uploaded_file($_FILES['certificate']['tmp_name'], $targetFilePath)) {
+     
+        $query = "INSERT into leave_application (startdate, enddate, leave_type, employee_name, application_date, numDays, certificate_path) 
+VALUES('$start_date', '$end_date', '$leave_type', '$EmployeeName', '$publish_at','$days','$uploadedFileName')";
  if (mysqli_query($conn, $query)) {
     echo "<p style='color:green'>Application Submitted Successfully</p>";
     header("Location:view-Leave-applications-report.php");
@@ -129,6 +136,11 @@ VALUES('$start_date', '$end_date', '$leave_type', '$EmployeeName', '$publish_at'
 // Close the database connection
 mysqli_close($conn);
     }
+      
+         // Insert leave application details
+
     }
+    }
+
 }
 ?>

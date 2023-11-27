@@ -270,8 +270,10 @@
         <div class="content-wrapper">
                             
         <h1>Leave Application Form</h1>
-    <form action="" method="POST">
-
+    <form action="" method="POST" enctype="multipart/form-data">   
+        
+    <label for="certificate">Upload Certificate (if any):</label><br>
+    <input type="file" id="certificate" name="certificate"><br><br>
         <label for="start_date">Start Date:</label> </br>
         <input type="date" id="start_date" name="start_date" required><br><br>
 
